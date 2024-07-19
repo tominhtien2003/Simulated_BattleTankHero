@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BulletEnemy : IBaseBullet
+public class BulletEnemy : BaseBullet
 {
     private float currentSpeedBullet;
 

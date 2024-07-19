@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class IBaseBullet : MonoBehaviour
+public abstract class BaseBullet : MonoBehaviour
 {
     public float damage;
     public float initialSpeedBullet;

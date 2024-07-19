@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BulletPlayer : IBaseBullet
+public class BulletPlayer : BaseBullet
 {
     private float currentSpeedBullet;
 
