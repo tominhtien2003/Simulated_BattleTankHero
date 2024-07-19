@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-public class EnemyChangeDirectionState : IEnemyState
+public class EnemyChangeDirectionState : IState
 {
     private EnemyController enemyController;
     public EnemyChangeDirectionState(EnemyController enemyController)

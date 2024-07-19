@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerIdleState : IPlayerState
+public class PlayerIdleState : IState
 {
     private PlayerController playerController;
     public PlayerIdleState(PlayerController playerController)

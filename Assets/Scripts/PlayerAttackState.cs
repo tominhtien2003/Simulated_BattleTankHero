@@ -1,5 +1,5 @@
 using UnityEngine;
-public class PlayerAttackState : IPlayerState
+public class PlayerAttackState : IState
 {
     private PlayerController playerController;
     public PlayerAttackState(PlayerController playerController)

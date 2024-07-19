@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerMoveState : IPlayerState
+public class PlayerMoveState : IState
 {
     private PlayerController playerController;
     public PlayerMoveState(PlayerController playerController)

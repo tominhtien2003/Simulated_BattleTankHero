@@ -1,4 +1,4 @@
-public class EnemyMoveState : IEnemyState
+public class EnemyMoveState : IState
 {
     private EnemyController enemyController;
     public EnemyMoveState(EnemyController enemyController)

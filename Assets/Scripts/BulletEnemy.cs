@@ -2,12 +2,6 @@ using UnityEngine;
 
 public class BulletEnemy : IBaseBullet
 {
-    [SerializeField] float damage;
-    [SerializeField] float initialSpeedBullet;
-    [SerializeField] float acceleration;
-    [SerializeField] float maxSpeed;
-    [SerializeField] float timeLife;
-
     private float currentSpeedBullet;
 
     private void OnEnable()
@@ -41,14 +35,15 @@ public class BulletEnemy : IBaseBullet
 
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            HealthPlayer healthPlayer = other.GetComponentInParent<HealthPlayer>();
+            IBaseHealth healthPlayer = other.GetComponentInParent<HealthPlayer>();
+
             if (healthPlayer != null)
             {
-                healthPlayer.OnDeathPlayer += HealthPlayer_OnDeathPlayer;
+                healthPlayer.OnDeath += HealthPlayer_OnDeathPlayer;
 
                 healthPlayer.TakeDamage(damage);
 
-                healthPlayer.OnDeathPlayer -= HealthPlayer_OnDeathPlayer;
+                healthPlayer.OnDeath -= HealthPlayer_OnDeathPlayer;
             }
         }
         TurnOffBullet();

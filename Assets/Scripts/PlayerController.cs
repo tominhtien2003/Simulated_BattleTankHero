@@ -2,7 +2,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerStateMachine))]
+[RequireComponent(typeof(StateMachine))]
 public class PlayerController : MonoBehaviour
 {
 
@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 lastMousePosition;
     private Vector3 currentMousePosition;
 
-    public PlayerStateMachine playerStateMachine { get; private set; }
+    public StateMachine playerStateMachine { get; private set; }
     private Rigidbody rb;
     private bool isRotatingPlayer = false;
     private bool isAttackingPlayer = false;
@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        playerStateMachine = GetComponent<PlayerStateMachine>();
+        playerStateMachine = GetComponent<StateMachine>();
 
         playerStateMachine.ChangeState(new PlayerMoveState(this));
     }

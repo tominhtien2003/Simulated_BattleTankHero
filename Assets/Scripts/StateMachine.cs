@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class PlayerStateMachine : MonoBehaviour
+public class StateMachine : MonoBehaviour
 {
-    public IPlayerState currentPlayerState;
-    public void ChangeState(IPlayerState playerState)
+    public IState currentPlayerState;
+    public void ChangeState(IState state)
     {
-        if (currentPlayerState != null && playerState.GetTypeState() == currentPlayerState.GetTypeState())
+        if (currentPlayerState != null && state.GetTypeState() == currentPlayerState.GetTypeState())
         {
             return;
         }
@@ -13,7 +13,7 @@ public class PlayerStateMachine : MonoBehaviour
         {
             currentPlayerState.Exit();
         }
-        currentPlayerState = playerState;
+        currentPlayerState = state;
 
         if (currentPlayerState != null)
         {

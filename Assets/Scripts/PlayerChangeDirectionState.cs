@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-public class PlayerChangeDirectionState : IPlayerState
+public class PlayerChangeDirectionState : IState
 {
     private PlayerController playerController;
     public PlayerChangeDirectionState(PlayerController playerController)

@@ -1,6 +1,6 @@
 using System.Collections;
 using UnityEngine;
-[RequireComponent(typeof(EnemyStateMachine))]
+[RequireComponent(typeof(StateMachine))]
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] Transform bulletHolder;
@@ -8,7 +8,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] float attackCooldown;
 
     private Rigidbody rb;
-    private EnemyStateMachine enemyStateMachine;
+    private StateMachine enemyStateMachine;
     private Vector3[] directionArray;
     private bool isChangingDirection = false;
     private void Awake()
@@ -19,7 +19,7 @@ public class EnemyController : MonoBehaviour
     }
     private void Start()
     {
-        enemyStateMachine = GetComponent<EnemyStateMachine>();
+        enemyStateMachine = GetComponent<StateMachine>();
 
         enemyStateMachine.ChangeState(new EnemyMoveState(this));
 
